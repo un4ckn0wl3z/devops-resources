@@ -1,0 +1,121 @@
+kubectl get nodes
+
+kubectl run kubernetes-first-app --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
+
+kubectl.exe get deployments
+
+kubectl proxy
+
+curl http://localhost:8001/api/v1/namespaces/default/pods/$POD_NAME
+
+
+http://localhost:8001/api/v1/namespaces/default/pods/kubernetes-first-app-7d4b64588d-rcdmc
+
+
+kubectl logs kubernetes-first-app-7d4b64588d-rcdmc
+
+
+kubectl.exe exec kubernetes-first-app-7d4b64588d-rcdmc env
+
+kubectl exec -ti kubernetes-first-app-7d4b64588d-rcdmc bash
+
+kubectl get services
+
+kubectl expose deployment/kubernetes-first-app --type="NodePort" --port 8080
+
+kubectl get services/kubernetes-first-app -o go-template='{{(index .spec.ports 0).nodePort}}'
+
+export NODE_PORT=$(kubectl get services/kubernetes-first-app -o go-template='{{(index .spec.ports 0).nodePort}}')
+echo NODE_PORT=$NODE_PORT
+
+
+minikube ip
+
+
+kubectl describe deployment
+
+kubectl get pods -l run=kubernetes-first-app
+kubectl get services -l run=kubernetes-first-app
+
+
+kubectl label pod $POD_NAME app=v1
+
+
+
+kubectl describe pod
+
+
+kubectl get pods -l app=v1
+
+kubectl delete service -l run=kubernetes-first-app
+
+
+
+kubectl scale deployments/kubernetes-first-app --replicas=4 
+
+kubectl describe deployments/kubernetes-first-app
+
+kubectl describe services/kubernetes-first-app
+
+
+ab -c 1000 -n 1000 http://172.18.45.218:32088/
+
+kubectl scale deployments/kubernetes-first-app --replicas=2 
+
+kubectl get pods
+
+
+kubectl delete pods kubernetes-first-app-7d4b64588d-dhx7v
+
+
+
+minikube start --vm-driver="hyperv" --extra-config kubelet.EnableCustomMetrics=true
+
+
+minikube addons enable heapster
+
+minikube addons enable metrics-server
+
+
+kubectl run php-apache --image=k8s.gcr.io/hpa-example --requests=cpu=200m --expose --port=80
+
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+
+
+kubectl get hpa
+
+kubectl run -i --tty load-generator --image=busybox /bin/sh
+
+
+kubectl run mynginxapp --image=nginx:latest --port=80
+
+kubectl expose deployment mynginxapp --type=NodePort
+
+minikube service mynginxapp 
+
+
+kubectl create -f pod.yaml
+
+kubectl delete pods my-pod
+
+kubectl delete pods my-pod --grace-period=0 --force
+
+kubectl create -f rc.yaml
+
+
+kubectl delete pods my-rc-wx6h7
+
+kubectl.exe get replicationcontroller
+
+
+
+
+
+
+
+
+
+
+
+
+

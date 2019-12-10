@@ -1,0 +1,62 @@
+minikube start --vm-driver="hyperv"
+
+May be it will help to remove the .minikube or .kube folders in %USERPROFILE%
+
+kubectl.exe create -f "D:\Projects\k8s_elk_node\devops-resources\examples\k8s_elastic_kibana_apm\elastic\elasticsearch.yaml"
+
+while (1) {kubectl get pods; sleep 5}
+
+kubectl.exe describe pod elasticsearch-0
+
+kubectl.exe logs -f elasticsearch-0
+
+minikube.exe status
+
+minikube.exe ip
+
+minikube.exe logs
+
+minikube.exe ssh
+
+sudo docker images
+
+kubectl.exe version
+
+kubectl.exe cluster-info
+
+kubectl.exe get nodes
+
+kubectl.exe get nodes -o wide
+
+
+
+kubectl.exe get pods --all-namespaces
+
+
+kubectl.exe get all -o wide
+
+
+kubectl.exe run myshell --rm -it --image busybox -- sh
+
+
+
+minikube.exe stop
+
+
+minikube.exe delete
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

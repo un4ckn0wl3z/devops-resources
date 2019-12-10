@@ -1,0 +1,24 @@
+---
+version: 1
+name: some value
+address:
+  street: One Microsoft Way
+  city: Redmond
+  country: USA
+---
+version: 1
+todos:
+  - shop
+  - clean
+  - do math
+  - write essay
+---
+created: 2019-01-01
+items:
+ - quantity: 2
+   price: 10
+   discounts:
+     - id: 1
+       displayName: 10% off  
+     - id: 111
+       displayName: Holiday Sale
